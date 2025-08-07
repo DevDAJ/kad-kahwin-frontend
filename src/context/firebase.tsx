@@ -9,8 +9,8 @@ const firebaseConfig = {
   projectId: 'kad-kahwin-7273f',
   storageBucket: 'kad-kahwin-7273f.firebasestorage.app',
   messagingSenderId: '290511232343',
-  appId: '1:290511232343:web:3f4951a94ea412f326b212',
-  measurementId: 'G-97HR7FP8W2',
+  appId: '1:290511232343:web:73051b798e11b08626b212',
+  measurementId: 'G-YM187K4SPQ',
 };
 
 const app = initializeApp(firebaseConfig);
