@@ -110,7 +110,7 @@ const BottomBar = () => {
             if (!values.name) {
               errors.name = 'Nama diperlukan';
             }
-            if (rsvps.find((rsvp) => rsvp.phone === values.phone)) {
+            if (rsvps?.find((rsvp) => rsvp.phone === values.phone)) {
               errors.phone = 'Telefon sudah terdaftar';
             }
             if (!values.phone) {
