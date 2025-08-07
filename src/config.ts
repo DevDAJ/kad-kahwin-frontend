@@ -6,7 +6,7 @@ const config = {
       short: 'Akmal',
     },
     bride: {
-      full: 'Nurain binti Syed',
+      full: 'Nurain binti Saad',
       short: 'Ain',
     },
   },

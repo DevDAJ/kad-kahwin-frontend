@@ -52,9 +52,10 @@ export function useFirestore(docName: string) {
         const docRef = await addDoc(collection(db, docName), newData);
         setError(null);
         await fetchAll();
-        return docRef.id;
+        console.log('Document written with ID: ', docRef.id);
       } catch (err) {
         setError(err);
+        console.error('Error adding document: ', err);
         return null;
       } finally {
         setLoading(false);
