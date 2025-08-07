@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=Mea+Culpa&family=Noticia+Text&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-mea: 'Mea Culpa', sans-serif;
+  --font-garamond: 'EB Garamond', serif;
+  --font-dancing: 'Dancing Script', cursive;
+  --font-noticia: 'Noticia Text', serif;
+}
+
+* {
+  text-align: center;
+}
