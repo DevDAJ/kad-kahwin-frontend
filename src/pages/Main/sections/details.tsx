@@ -56,13 +56,12 @@ export default function Details() {
       <Info icon={<ClockIcon {...IconStyles} />} text={config.eventDetails.time} />
       <Info icon={<MapPinIcon {...IconStyles} />} text={config.eventDetails.venue} />
       <Info icon={<ListBulletIcon {...IconStyles} />}>
-        <ul>
+        <ul className="gap-2">
           {config.eventTentative.map((item, index) => (
             <TimeListItem key={index} time={item.time} tentative={item.tentative} />
           ))}
         </ul>
       </Info>
-      <Text text="Akan berlangsung dalam" font="noticia" size="3xl" weight="bold" />
       <br />
 
       <Countdown targetDate={config.marriageDate} />

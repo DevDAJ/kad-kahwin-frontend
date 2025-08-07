@@ -31,7 +31,14 @@ const BottomBar = () => {
         </div>
       </div>
 
-      {modal && <Modal closeModal={closeModal} modalTitle={modal} />}
+      {modal && (
+        <Modal closeModal={closeModal} modalTitle={modal}>
+          {modal === 'rsvp' && <div>RSVP Form Placeholder</div>}
+          {modal === 'calendar' && <div>Calendar Placeholder</div>}
+          {modal === 'contact' && <div>Contact Form Placeholder</div>}
+          {modal === 'address' && <div>Address Placeholder</div>}
+        </Modal>
+      )}
     </>
   );
 };
