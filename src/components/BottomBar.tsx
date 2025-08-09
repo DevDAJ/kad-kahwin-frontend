@@ -133,7 +133,7 @@ const BottomBar = () => {
               action={actions(submitForm)}
             >
               {modal === 'rsvp' && (
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                   <InputField
                     required
                     error={errors.name}
@@ -181,6 +181,8 @@ const BottomBar = () => {
                 <div className="flex flex-col gap-2">
                   <PhoneInfo name="Imran" phoneNumber="0173141955" />
                   <PhoneInfo name="Noorlida" phoneNumber="0176572521" />
+                  <PhoneInfo name="Mala" phoneNumber="0172091019" />
+                  <PhoneInfo name="Azah" phoneNumber="0123412117" />
                 </div>
               )}
               {modal === 'address' && (
