@@ -44,7 +44,7 @@ const Modal = ({
             className="mt-4 bg-black text-white px-4 py-2 rounded-lg cursor-pointer"
             onClick={closeModal}
           >
-            Close
+            Tutup
           </button>
         </div>
       </div>

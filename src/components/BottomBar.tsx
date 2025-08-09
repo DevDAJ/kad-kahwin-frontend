@@ -1,11 +1,12 @@
 // BottomBar.tsx
-import { useEffect, useState } from 'react';
-import Modal from './Modal';
-import { Formik } from 'formik';
-import { CalendarIcon, PhoneIcon, MapPinIcon, ListBulletIcon } from '@heroicons/react/24/solid';
-import InputField from './InputField';
 import { useFirestore } from '@/hooks/useFirestore';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { CalendarIcon, ListBulletIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { useMutation } from '@tanstack/react-query';
+import { Formik } from 'formik';
+import { useEffect, useState } from 'react';
+import InputField from './InputField';
+import Modal from './Modal';
+import PhoneInfo from './PhoneInfo';
 
 const initialValues = {
   name: '',
@@ -54,10 +55,9 @@ const BottomBar = () => {
   const closeModal = () => setModal(null);
 
   const options = [
-    { label: 'RSVP', key: 'rsvp', icon: <ListBulletIcon className="w-12 h-12" /> },
-    { label: 'Kalendar', key: 'calendar', icon: <CalendarIcon className="w-12 h-12" /> },
-    { label: 'Hubungan', key: 'contact', icon: <PhoneIcon className="w-12 h-12" /> },
-    { label: 'Lokasi', key: 'address', icon: <MapPinIcon className="w-12 h-12" /> },
+    { label: 'RSVP', key: 'rsvp', icon: <ListBulletIcon className="w-6 h-6" /> },
+    { label: 'Telefon', key: 'contact', icon: <PhoneIcon className="w-6 h-6" /> },
+    { label: 'Lokasi', key: 'address', icon: <MapPinIcon className="w-6 h-6" /> },
   ];
 
   const actions = (onSubmit: () => void) => {
@@ -129,7 +129,7 @@ const BottomBar = () => {
             <Modal
               closeModal={closeModal}
               modalTitle={options.find((option) => option.key === modal)?.label || ''}
-              actionText={'Submit'}
+              actionText={'Hantar'}
               action={actions(submitForm)}
             >
               {modal === 'rsvp' && (
@@ -139,7 +139,7 @@ const BottomBar = () => {
                     error={errors.name}
                     name="name"
                     label="Nama"
-                    placeholder="Masukkan nama Anda"
+                    placeholder="Masukkan Nama Anda"
                     onChange={handleChange}
                     value={values.name}
                   />
@@ -148,7 +148,7 @@ const BottomBar = () => {
                     label="Telepon"
                     type="tel"
                     required
-                    placeholder="Masukkan nomor telepon Anda"
+                    placeholder="Masukkan Nombor Telepon Anda"
                     onChange={handleChange}
                     error={errors.phone}
                     value={values.phone}
@@ -158,7 +158,7 @@ const BottomBar = () => {
                     label="Dewasa"
                     type="number"
                     required
-                    placeholder="Jumlah dewasa"
+                    placeholder="Jumlah Dewasa"
                     min={0}
                     onChange={handleChange}
                     error={errors.adult}
@@ -166,9 +166,10 @@ const BottomBar = () => {
                   />
                   <InputField
                     name="child"
-                    label="Anak-anak"
+                    label="Kanak-kanak (Bawah 8 Tahun)"
                     type="number"
-                    placeholder="Jumlah anak-anak"
+                    required
+                    placeholder="Jumlah Kanak-kanak"
                     min={0}
                     onChange={handleChange}
                     error={errors.child}
@@ -176,9 +177,42 @@ const BottomBar = () => {
                   />
                 </div>
               )}
-              {modal === 'calendar' && <div>Calendar Placeholder</div>}
-              {modal === 'contact' && <div>Contact Form Placeholder</div>}
-              {modal === 'address' && <div>Address Placeholder</div>}
+              {modal === 'contact' && (
+                <div className="flex flex-col gap-2">
+                  <PhoneInfo name="Imran" phoneNumber="0173141955" />
+                  <PhoneInfo name="Imran" phoneNumber="0173141955" />
+                </div>
+              )}
+              {modal === 'address' && (
+                <div className="flex gap-4 justify-center">
+                  <a
+                    href="https://maps.app.goo.gl/cgjjbocAgUNqjYKH8"
+                    className="flex flex-col items-center justify-center w-30 h-30 shadow-lg p-4 rounded-2xl bg-slate-100"
+                  >
+                    <div className="w-10">
+                      <img
+                        width="256"
+                        alt="Logo of Google Maps (2020)"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/256px-Google_Maps_icon_%282020%29.svg.png?20200218211225"
+                      />
+                    </div>
+                    Google Maps
+                  </a>
+                  <a
+                    href="https://www.waze.com/en/live-map/directions/my/selangor/kajang/senja-hills?place=ChIJO-GX8d7LzTERHz48z0hLfQ8"
+                    className="flex flex-col items-center justify-center shadow-lg p-4 w-30 h-30 rounded-2xl bg-slate-100"
+                  >
+                    <div className="w-12">
+                      <img
+                        width="256"
+                        alt="Logo of Google Maps (2020)"
+                        src="https://upload.wikimedia.org/wikipedia/fr/0/05/Waze-icon-2020.svg"
+                      />
+                    </div>
+                    Waze
+                  </a>
+                </div>
+              )}
             </Modal>
           )}
         </Formik>
