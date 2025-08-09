@@ -12,7 +12,7 @@ const config = {
   },
   parentsNames: {
     father: 'Imran bin Yusof',
-    mother: 'Noorlida binti Ahmad',
+    mother: 'Noorlida binti Ahmad Shah',
   },
   eventDetails: {
     time: '11.00 Pagi - 5.00 Petang',
