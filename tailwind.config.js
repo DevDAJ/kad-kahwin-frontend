@@ -1,15 +1,16 @@
 module.exports = {
-content: [
+  content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}', // Adjust if you use .vue or other extensions
   ],
   theme: {
     extend: {
       fontFamily: {
-        noticia: ['"Noticia Text"', "serif"],
-        dancing: ['"Dancing Script"', "cursive"],
-        garamond: ['"EB Garamond"', "serif"],
-        mea: ['"Mea Culpa"', "cursive"],
+        main: ['"Dancing Script"', 'cursive'],
+        cursive: ['"Mea Culpa"', 'cursive'],
+      },
+      colors: {
+        main: '#f8f4ef',
       },
     },
   },

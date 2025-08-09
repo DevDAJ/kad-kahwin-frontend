@@ -1,8 +1,8 @@
 const config = {
-  marriageDate: '2025-08-10T10:18:00',
+  marriageDate: '2025-12-28T10:00:00',
   coupleNames: {
     groom: {
-      full: 'Mohd Akmal Bin Imran',
+      full: 'Muhammad Akmal Bin Imran',
       short: 'Akmal',
     },
     bride: {
@@ -16,12 +16,13 @@ const config = {
   },
   eventDetails: {
     time: '11.00 Pagi - 5.00 Petang',
-    venue: 'Dewan Serbaguna, Taman Melati, Kuala Lumpur',
+    venue: 'Senja Hills, Taman Desa Ros, Kajang, Selangor',
   },
   eventTentative: [
     { time: '11.00a.m.', tentative: 'Ketibaan Tetamu' },
     { time: '12.00p.m.', tentative: 'Majlis Akad Nikah' },
     { time: '1.00p.m', tentative: 'Majlis Makan Beradab' },
+    { time: '5.00p.m.', tentative: 'Majlis Bersurai' },
   ],
   invitationText:
     "DENGAN SEGALA HORMATNYA MENJEMPUT DATO'/ DATIN/ TUAN/ PUAN/ ENCIK/ CIK DAN SEISI KELUARGA KE MAJLIS PERKAHWINAN PUTERA KAMI BERSAMA PASANGANNYA",

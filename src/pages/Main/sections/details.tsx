@@ -7,19 +7,19 @@ import { useDate } from '@/hooks/useDate';
 import config from '../../../config';
 
 const TextStyles: Parameters<typeof Text>[0] = {
-  font: 'garamond',
-  size: '2xl',
-  weight: 'medium',
-  color: 'text-[#DAA520]',
+  font: 'main',
+  size: 'xl',
+  weight: 'light',
+  color: 'text-slate-500',
 };
 const ParentTextStyles: Parameters<typeof Text>[0] = {
-  font: 'garamond',
-  size: '3xl',
+  font: 'cursive',
+  size: '4xl',
   weight: 'medium',
   color: 'text-black',
 };
 const SpouseTextStyles: Parameters<typeof Text>[0] = {
-  font: 'dancing',
+  font: 'cursive',
   size: '4xl',
   weight: 'medium',
   color: 'text-black',
@@ -27,18 +27,17 @@ const SpouseTextStyles: Parameters<typeof Text>[0] = {
 const IconStyles: Parameters<
   React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, 'ref'>>
 >[0] = {
-  className: 'text-[#DAA520] text-5xl',
-  width: 64,
+  className: 'text-slate-500 text-xl',
+  width: 58,
 };
 
 export default function Details() {
-  const { day, fullDate } = useDate(config.marriageDate, 'ms-MY');
   return (
-    <div className="w-full mx-auto min-h-screen flex flex-col items-center px-4">
+    <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-10">
       <img
         src="https://www.onlinekad.com/images/greeting-1.webp"
         alt="Greeting"
-        className="w-[70%] md:w-1/2 h-auto object-cover rounded-lg mb-4"
+        className="w-[50%] md:w-1/2 h-auto object-cover rounded-lg mb-4"
       />
       <Text text={config.welcomeText} {...TextStyles} />
       <br />
@@ -49,19 +48,8 @@ export default function Details() {
       <Text text={config.invitationText} {...TextStyles} />
       <br />
       <Text text={config.coupleNames.groom.full} {...SpouseTextStyles} />
-      <Text text="&" font="dancing" {...SpouseTextStyles} />
+      <Text text="&" {...SpouseTextStyles} />
       <Text text={config.coupleNames.bride.full} {...SpouseTextStyles} />
-      <br />
-      <Info icon={<CalendarDaysIcon {...IconStyles} />} text={`${day}, ${fullDate}`} />
-      <Info icon={<ClockIcon {...IconStyles} />} text={config.eventDetails.time} />
-      <Info icon={<MapPinIcon {...IconStyles} />} text={config.eventDetails.venue} />
-      <Info icon={<ListBulletIcon {...IconStyles} />}>
-        <ul className="gap-2">
-          {config.eventTentative.map((item, index) => (
-            <TimeListItem key={index} time={item.time} tentative={item.tentative} />
-          ))}
-        </ul>
-      </Info>
       <br />
 
       <Countdown targetDate={config.marriageDate} />
