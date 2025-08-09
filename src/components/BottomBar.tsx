@@ -148,7 +148,7 @@ const BottomBar = () => {
                     label="Telepon"
                     type="tel"
                     required
-                    placeholder="Masukkan Nombor Telepon Anda"
+                    placeholder="Masukkan Nombor Telefon Anda"
                     onChange={handleChange}
                     error={errors.phone}
                     value={values.phone}
@@ -180,7 +180,7 @@ const BottomBar = () => {
               {modal === 'contact' && (
                 <div className="flex flex-col gap-2">
                   <PhoneInfo name="Imran" phoneNumber="0173141955" />
-                  <PhoneInfo name="Imran" phoneNumber="0173141955" />
+                  <PhoneInfo name="Noorlida" phoneNumber="0176572521" />
                 </div>
               )}
               {modal === 'address' && (
