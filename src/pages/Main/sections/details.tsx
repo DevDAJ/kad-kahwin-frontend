@@ -33,7 +33,7 @@ const IconStyles: Parameters<
 
 export default function Details() {
   return (
-    <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-10">
+    <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-20">
       <img
         src="https://www.onlinekad.com/images/greeting-1.webp"
         alt="Greeting"
