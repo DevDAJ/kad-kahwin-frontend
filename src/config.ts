@@ -2,7 +2,7 @@ const config = {
   marriageDate: '2025-12-28T10:00:00',
   coupleNames: {
     groom: {
-      full: 'Muhammad Akmal Bin Imran',
+      full: 'Muhammad Akmal bin Imran',
       short: 'Akmal',
     },
     bride: {
