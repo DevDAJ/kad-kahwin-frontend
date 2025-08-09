@@ -21,7 +21,7 @@ const PhoneInfo = ({ name, phoneNumber }: { name: string; phoneNumber: string })
         <a href={whatsapp}>
           <FaWhatsapp className="w-6 h-6 text-green-300" />
         </a>
-        <a href={`tel:{phoneNumber}`}>
+        <a href={`tel:${phoneNumber}`}>
           <PhoneIcon className="w-5.5 h-5.5" />
         </a>
       </div>
