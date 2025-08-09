@@ -1,6 +1,6 @@
 interface TextProps {
   text?: string;
-  font?: 'main' | 'cursive';
+  font?: 'main' | 'cursive' | 'arabic';
   // all sizes are Tailwind CSS sizes
   // e.g. "sm", "md", "lg", "xl", "
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
@@ -12,6 +12,7 @@ interface TextProps {
 const fontMap: Record<string, string> = {
   main: 'font-main',
   cursive: 'font-cursive',
+  arabic: 'font-arabic',
 };
 
 const sizeMap: Record<string, string> = {

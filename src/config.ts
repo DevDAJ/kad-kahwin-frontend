@@ -26,7 +26,7 @@ const config = {
   ],
   invitationText:
     "DENGAN SEGALA HORMATNYA MENJEMPUT DATO'/ DATIN/ TUAN/ PUAN/ ENCIK/ CIK DAN SEISI KELUARGA KE MAJLIS PERKAHWINAN PUTERA KAMI BERSAMA PASANGANNYA",
-  welcomeText: 'ASSALAMUALAIKUM W.B.T',
+  welcomeText: 'السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ',
   eventTitle: 'Walimatul Urus',
 } as const;
 

@@ -34,12 +34,7 @@ const IconStyles: Parameters<
 export default function Details() {
   return (
     <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-20">
-      <img
-        src="https://www.onlinekad.com/images/greeting-1.webp"
-        alt="Greeting"
-        className="w-[50%] md:w-1/2 h-auto object-cover rounded-lg mb-4"
-      />
-      <Text text={config.welcomeText} {...TextStyles} />
+      <Text text={config.welcomeText} {...TextStyles} font="arabic" color="text-black" size="2xl" />
       <br />
       <Text text={config.parentsNames.father} {...ParentTextStyles} />
       <Text text="&" {...ParentTextStyles} />
