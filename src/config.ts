@@ -19,10 +19,8 @@ const config = {
     venue: 'Senja Hills, Taman Desa Ros, Kajang, Selangor',
   },
   eventTentative: [
-    { time: '11.00a.m.', tentative: 'Ketibaan Tetamu' },
-    { time: '12.00p.m.', tentative: 'Majlis Akad Nikah' },
-    { time: '1.00p.m', tentative: 'Majlis Makan Beradab' },
-    { time: '5.00p.m.', tentative: 'Majlis Bersurai' },
+    { time: '11.00 a.m. - 4.00 p.m.', tentative: 'Jamuan Makan' },
+    { time: '12.30 p.m.', tentative: 'Ketibaan Pengantin' },
   ],
   invitationText:
     "DENGAN SEGALA HORMATNYA MENJEMPUT DATO'/ DATIN/ TUAN/ PUAN/ ENCIK/ CIK DAN SEISI KELUARGA KE MAJLIS PERKAHWINAN PUTERA KAMI BERSAMA PASANGANNYA",
