@@ -53,7 +53,7 @@ export default function Details() {
           size="2xl"
           color="text-slate-500"
         />
-        <Text text={config.doaPengantin} {...TextStyles} font="arabic" size="xl" />
+        <Text text={config.doaPengantin} {...TextStyles} font="arabic" size="lg" />
       </div>
       <Divider isRotate />
       <br />
@@ -61,8 +61,8 @@ export default function Details() {
       <div className="flex flex-col gap-2 py-2">
         {config.eventTentative.map(({ tentative, time }) => (
           <div className="flex flex-col">
-            <Text text={tentative} size="2xl" color="text-slate-500" />
-            <Text text={time} size="2xl" color="text-slate-800" />
+            <Text text={tentative} size="xl" color="text-slate-500" />
+            <Text text={time} size="xl" color="text-slate-800" />
           </div>
         ))}
       </div>
