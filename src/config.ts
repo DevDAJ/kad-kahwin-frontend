@@ -1,5 +1,5 @@
 const config = {
-  marriageDate: '2025-12-28T10:00:00+08:00',
+  marriageDate: '2025-12-28T11:00:00+08:00',
   coupleNames: {
     groom: {
       full: 'Muhammad Akmal bin Imran',

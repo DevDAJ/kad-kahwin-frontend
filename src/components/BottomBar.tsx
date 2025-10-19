@@ -88,7 +88,7 @@ const BottomBar = () => {
         className="fixed bottom-0 md:left-1/2 md:transform-[translate(-50%,0)] w-full md:w-1/2 md:px-16 mx-auto z-50 backdrop-blur-xs shadow-inner"
         initial={{
           y: 100,
-          x: '-50%',
+          ...(isBigScreen && { x: '-50%' }),
         }}
         animate={{
           y: 0,
