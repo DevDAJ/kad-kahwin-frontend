@@ -64,9 +64,9 @@ export default function Main({
       <div>
         {venueSplits.map(
           (text, index) =>
-            index !== 3 &&
-            (index === 2 ? (
-              <Text {...DateTextStyles} text={`${venueSplits[2]}, ${venueSplits[3]}`} />
+            ![2, 4].includes(index) &&
+            ([1, 3].includes(index) ? (
+              <Text {...DateTextStyles} text={`${venueSplits[index]}, ${venueSplits[index + 1]}`} />
             ) : (
               <Text {...DateTextStyles} text={text} />
             )),
