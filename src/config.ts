@@ -16,7 +16,7 @@ const config = {
   },
   eventDetails: {
     time: '11.00 Pagi - 5.00 Petang',
-    venue: 'Senja Hills, Taman Desa Ros, Kajang, Selangor',
+    venue: 'Senja Hills, No 26, Jalan Desa Ros, Taman Desa Ros, Kajang, Selangor',
   },
   eventTentative: [
     { time: '11.00 a.m. - 4.00 p.m.', tentative: 'Jamuan Makan' },
