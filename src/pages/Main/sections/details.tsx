@@ -1,11 +1,7 @@
 import Countdown from '@/components/Countdown';
-import Info from '@/components/Info';
-import Text from '@/components/Text';
-import TimeListItem from '@/components/TimeListItem';
-import { CalendarDaysIcon, ClockIcon, MapPinIcon, ListBulletIcon } from '@heroicons/react/24/solid';
-import { useDate } from '@/hooks/useDate';
-import config from '../../../config';
 import Divider from '@/components/Divider';
+import Text from '@/components/Text';
+import config from '../../../config';
 
 const TextStyles: Parameters<typeof Text>[0] = {
   font: 'main',
@@ -21,14 +17,14 @@ const ParentTextStyles: Parameters<typeof Text>[0] = {
 };
 const SpouseTextStyles: Parameters<typeof Text>[0] = {
   font: 'cursive',
-  size: '4xl',
+  size: '3xl',
   weight: 'medium',
   color: 'text-black',
 };
 
 export default function Details() {
   return (
-    <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-20">
+    <div className="w-full mx-auto flex flex-col items-center px-4 md:mb-20 py-2">
       <Text text={config.welcomeText} {...TextStyles} font="arabic" color="text-black" size="2xl" />
       <br />
       <Text text={config.parentsNames.father} {...ParentTextStyles} />
@@ -50,10 +46,10 @@ export default function Details() {
         <Text
           text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ"
           font="arabic"
-          size="2xl"
+          size="xl"
           color="text-slate-500"
         />
-        <Text text={config.doaPengantin} {...TextStyles} font="arabic" size="lg" />
+        <Text text={config.doaPengantin} {...TextStyles} font="arabic" size="md" />
       </div>
       <Divider isRotate />
       <br />
@@ -61,8 +57,8 @@ export default function Details() {
       <div className="flex flex-col gap-2 py-2">
         {config.eventTentative.map(({ tentative, time }) => (
           <div className="flex flex-col">
-            <Text text={tentative} size="xl" color="text-slate-500" />
-            <Text text={time} size="xl" color="text-slate-800" />
+            <Text text={tentative} size="lg" color="text-slate-500" />
+            <Text text={time} size="lg" color="text-slate-800" />
           </div>
         ))}
       </div>

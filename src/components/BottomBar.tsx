@@ -1,10 +1,10 @@
 // BottomBar.tsx
 import { useFirestore } from '@/hooks/useFirestore';
-import { CalendarIcon, ListBulletIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { ListBulletIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import { useMutation } from '@tanstack/react-query';
 import { Formik } from 'formik';
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { motion, type Transition } from 'motion/react';
 import InputField from './InputField';
 import Modal from './Modal';
 import PhoneInfo from './PhoneInfo';

@@ -4,6 +4,7 @@ import Details from './sections/details';
 import AudioPause from '@/components/AudioPause';
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import Divider from '@/components/Divider';
 
 export default function Main() {
   const [isFirstClick, setIsFirstClick] = useState(true);
@@ -63,6 +64,7 @@ export default function Main() {
           <AudioPause />
           <div className="w-full md:w-1/2 min-h-screen flex flex-col items-center justify-center mx-auto shadow-lg pb-40 bg-main">
             <MainSection />
+            <Divider />
             <Details />
           </div>
           <BottomBar />
