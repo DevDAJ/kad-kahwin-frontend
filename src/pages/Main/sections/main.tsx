@@ -4,7 +4,7 @@ import config from '../../../config';
 
 const SpouseTextStyles: Parameters<typeof Text>[0] = {
   font: 'cursive',
-  size: '6xl',
+  size: '5xl',
   weight: 'normal',
   color: 'text-gray-700',
 };
