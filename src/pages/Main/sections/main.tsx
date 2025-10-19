@@ -1,6 +1,7 @@
 import Text from '@/components/Text';
 import { useDate } from '@/hooks/useDate';
 import config from '../../../config';
+import Divider from '@/components/Divider';
 
 const SpouseTextStyles: Parameters<typeof Text>[0] = {
   font: 'cursive',
@@ -22,7 +23,7 @@ export default function Main({
   firstClick?: boolean;
   clicked?: () => void;
 }) {
-  const { day, fullDate, dayNum, month, time, year } = useDate(config.marriageDate, 'ms-MY');
+  const { day, dayNum, month, time, year } = useDate(config.marriageDate, 'ms-MY');
   const venueSplits = config.eventDetails.venue.split(', ');
   return (
     <div className="w-full mx-auto mb-20 p-4 flex flex-col items-center justify-start pt-15 gap-3 bg-cover bg-no-repeat bg-center">
@@ -72,6 +73,9 @@ export default function Main({
             )),
         )}
       </div>
+      <br />
+      <br />
+      {!firstClick && <Divider />}
     </div>
   );
 }

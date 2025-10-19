@@ -64,7 +64,6 @@ export default function Main() {
           <AudioPause />
           <div className="w-full md:w-1/2 min-h-screen flex flex-col items-center justify-center mx-auto shadow-lg pb-40 bg-main">
             <MainSection />
-            <Divider />
             <Details />
           </div>
           <BottomBar />
