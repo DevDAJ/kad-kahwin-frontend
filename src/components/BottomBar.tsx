@@ -4,6 +4,7 @@ import { CalendarIcon, ListBulletIcon, MapPinIcon, PhoneIcon } from '@heroicons/
 import { useMutation } from '@tanstack/react-query';
 import { Formik } from 'formik';
 import { useEffect, useState } from 'react';
+import { motion, type Transition } from 'motion/react';
 import InputField from './InputField';
 import Modal from './Modal';
 import PhoneInfo from './PhoneInfo';
@@ -36,6 +37,14 @@ function isValidMalaysianPhoneNumber(number: string) {
   return mobileRegex.test(localNumber) || landlineRegex.test(localNumber);
 }
 
+const options = [
+  { label: 'RSVP', key: 'rsvp', icon: <ListBulletIcon className="w-6 h-6" /> },
+  { label: 'Telefon', key: 'contact', icon: <PhoneIcon className="w-6 h-6" /> },
+  { label: 'Lokasi', key: 'address', icon: <MapPinIcon className="w-6 h-6" /> },
+];
+
+const isBigScreen = window.innerWidth >= 768;
+
 const BottomBar = () => {
   const [modal, setModal] = useState<null | string>(null);
   const [rsvps, setRsvps] = useState<any[]>([]);
@@ -53,12 +62,6 @@ const BottomBar = () => {
 
   const openModal = (type: string) => setModal(type);
   const closeModal = () => setModal(null);
-
-  const options = [
-    { label: 'RSVP', key: 'rsvp', icon: <ListBulletIcon className="w-6 h-6" /> },
-    { label: 'Telefon', key: 'contact', icon: <PhoneIcon className="w-6 h-6" /> },
-    { label: 'Lokasi', key: 'address', icon: <MapPinIcon className="w-6 h-6" /> },
-  ];
 
   const actions = (onSubmit: () => void) => {
     if (modal !== 'rsvp') {
@@ -81,7 +84,22 @@ const BottomBar = () => {
   };
   return (
     <>
-      <div className="fixed bottom-0 md:left-1/2 md:transform-[translate(-50%,0)] w-full md:w-1/2 md:px-16 mx-auto z-50 backdrop-blur-xs shadow-inner">
+      <motion.div
+        className="fixed bottom-0 md:left-1/2 md:transform-[translate(-50%,0)] w-full md:w-1/2 md:px-16 mx-auto z-50 backdrop-blur-xs shadow-inner"
+        initial={{
+          y: 100,
+          x: '-50%',
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 400,
+          damping: 30,
+          duration: 1500000,
+        }}
+      >
         <div className="flex justify-around py-2 px-4">
           {options.map(({ label, key, icon }) => (
             <button
@@ -94,7 +112,7 @@ const BottomBar = () => {
             </button>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {modal && (
         <Formik<{

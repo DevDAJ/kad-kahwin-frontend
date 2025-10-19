@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Mea+Culpa&family=Rubik:ital,wght@0,300..900;1,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Nova Quinta';
+  src: url('/NovaQuinta.otf');
+}
+
 @theme {
-  --font-cursive: 'Mea Culpa', sans-serif;
+  --font-cursive: 'Nova Quinta', sans-serif;
   --font-main: 'Urbanist', sans-serif;
   --font-arabic: 'Rubik', sans-serif;
   --color-main: '#F8F4EF';

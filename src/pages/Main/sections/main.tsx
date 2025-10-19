@@ -4,7 +4,7 @@ import config from '../../../config';
 
 const SpouseTextStyles: Parameters<typeof Text>[0] = {
   font: 'cursive',
-  size: '7xl',
+  size: '6xl',
   weight: 'normal',
   color: 'text-gray-700',
 };
@@ -30,7 +30,7 @@ export default function Main({
       <div>
         <Text text="Walimatul Urus" font="main" size="2xl" weight="medium" color="text-gray-700" />
       </div>
-      <div className="flex flex-col items-center justify-center space-x-2 mt-6 gap-1">
+      <div className="flex flex-col items-center justify-center space-x-2 mt-6 gap-2">
         <Text text={config.coupleNames.groom.short} {...SpouseTextStyles} />
         <Text text="&" color="text-slate-500" size="4xl" font="main" />
         <Text text={config.coupleNames.bride.short} {...SpouseTextStyles} />
@@ -60,6 +60,7 @@ export default function Main({
           <Text text={year} {...DateTextStyles} weight="bold" size="3xl" />
         </div>
       </div>
+
       <div>
         {venueSplits.map(
           (text, index) =>
