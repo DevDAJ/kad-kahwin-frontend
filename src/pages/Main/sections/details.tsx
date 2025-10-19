@@ -38,9 +38,8 @@ export default function Details() {
       <Text text="&" {...SpouseTextStyles} />
       <br />
       <Text text={config.coupleNames.bride.full} {...SpouseTextStyles} />
-      <br />
       <Divider />
-      <div className="w-full flex flex-col items-center justify-center my-10">
+      <div className="w-full flex flex-col items-center justify-center">
         <Text text="Doa Pengantin" {...TextStyles} font="cursive" size="4xl" color="text-black" />
         <br />
         <Text
@@ -52,7 +51,6 @@ export default function Details() {
         <Text text={config.doaPengantin} {...TextStyles} font="arabic" size="md" />
       </div>
       <Divider isRotate />
-      <br />
       <Text text="Atur Cara Majlis" {...SpouseTextStyles} font="cursive" />
       <div className="flex flex-col gap-2 py-2">
         {config.eventTentative.map(({ tentative, time }) => (

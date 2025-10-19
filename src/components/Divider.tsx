@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 interface DividerProps {
   isRotate?: boolean;
+  isNoPad?: boolean;
 }
 
-const Divider: React.FC<DividerProps> = ({ isRotate = false }) => {
-  const className = !isRotate ? 'flex text-black' : 'flex text-black rotate-180';
+const Divider: React.FC<DividerProps> = ({ isRotate = false, isNoPad = false }) => {
+  const className = useMemo(() => {
+    let name = 'flex text-black';
+    name += isRotate ? ' rotate-180' : '';
+    name += !isNoPad ? ' divider-padding' : '';
+    return name;
+  }, [isRotate, isNoPad]);
+
   return (
     <div className={className}>
       <svg id="Layer_1" data-name="Layer 1" width={300} viewBox="0 0 99.24 11.87">

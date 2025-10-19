@@ -26,7 +26,7 @@ export default function Main({
   const { day, dayNum, month, time, year } = useDate(config.marriageDate, 'ms-MY');
   const venueSplits = config.eventDetails.venue.split(', ');
   return (
-    <div className="w-full mx-auto mb-20 p-4 flex flex-col items-center justify-start pt-15 gap-3 bg-cover bg-no-repeat bg-center">
+    <div className="w-full mx-auto mb-20 p-4 flex flex-col items-center justify-start gap-3 bg-cover bg-no-repeat bg-center">
       <Text text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ" font="arabic" size="2xl" />
       <div>
         <Text text="Walimatul Urus" font="main" size="2xl" weight="medium" color="text-gray-700" />
@@ -75,7 +75,7 @@ export default function Main({
       </div>
       <br />
       <br />
-      {!firstClick && <Divider />}
+      {!firstClick && <Divider isNoPad/>}
     </div>
   );
 }

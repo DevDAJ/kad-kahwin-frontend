@@ -16,3 +16,9 @@
 * {
   text-align: center;
 }
+
+.divider-padding {
+  --margin: 5rem;
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
+}
