@@ -219,7 +219,7 @@ const BottomBar = () => {
                     Google Maps
                   </a>
                   <a
-                    href="https://www.waze.com/en/live-map/directions/my/selangor/kajang/senja-hills?place=ChIJO-GX8d7LzTERHz48z0hLfQ8"
+                    href="https://waze.com/ul/hw283h67sc"
                     className="flex flex-col items-center justify-center shadow-lg p-4 w-30 h-30 rounded-2xl bg-slate-100"
                   >
                     <div className="w-12">
