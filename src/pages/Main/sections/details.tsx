@@ -61,7 +61,7 @@ export default function Details() {
         ))}
       </div>
       <br />
-      <Text text="Sila RSVP kehadiran anda sebelum 15 Disember 2025" {...TextStyles} />
+      <Text text="Sila RSVP kehadiran anda sebelum 10 Disember 2025" {...TextStyles} />
       <br />
       <Countdown targetDate={config.marriageDate} />
     </div>

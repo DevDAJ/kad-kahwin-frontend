@@ -201,6 +201,7 @@ const BottomBar = () => {
                   <PhoneInfo name="Noorlida" phoneNumber="0176572521" />
                   <PhoneInfo name="Mala" phoneNumber="0172091019" />
                   <PhoneInfo name="Azah" phoneNumber="0123412117" />
+                  <PhoneInfo name="Nurul" phoneNumber="0192381376" />
                 </div>
               )}
               {modal === 'address' && (
