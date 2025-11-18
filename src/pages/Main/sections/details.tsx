@@ -54,14 +54,12 @@ export default function Details() {
       <Text text="Atur Cara Majlis" {...SpouseTextStyles} font="cursive" />
       <div className="flex flex-col gap-2 py-2">
         {config.eventTentative.map(({ tentative, time }) => (
-          <div className="flex flex-col">
+          <div className="flex flex-col" key={`${tentative}-${time}`}>
             <Text text={tentative} size="lg" color="text-slate-500" />
             <Text text={time} size="lg" color="text-slate-800" />
           </div>
         ))}
       </div>
-      <br />
-      <Text text="Sila RSVP kehadiran anda sebelum 10 Disember 2025" {...TextStyles} />
       <br />
       <Countdown targetDate={config.marriageDate} />
     </div>

@@ -2,15 +2,17 @@ import BottomBar from '@/components/BottomBar';
 import MainSection from './sections/main';
 import Details from './sections/details';
 import AudioPause from '@/components/AudioPause';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import Divider from '@/components/Divider';
 
 export default function Main() {
   const [isFirstClick, setIsFirstClick] = useState(true);
 
+  const bottomBarRef = useRef<any>(null);
   const onClick = useCallback(() => {
-    setIsFirstClick(false);
+    if (isFirstClick) setIsFirstClick(false);
+    else bottomBarRef.current?.open();
+    
   }, []);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function Main() {
     <>
       {isFirstClick && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-full z-[100] bg-cover bg-main"
+          className="fixed top-0 left-0 w-full h-full z-100 bg-cover bg-main"
           initial={{ opacity: 100, y: 0 }}
           exit={{ opacity: 0, y: 10, animationDuration: 10 }}
         >
@@ -57,16 +59,16 @@ export default function Main() {
       )}
       <img
         src="/bg.png"
-        className="fixed top-0 left-0 w-full h-full -z-10 bg-cover [transform:translate3d(0,0,0)]"
+        className="fixed top-0 left-0 w-full h-full -z-10 bg-cover transform-[translate3d(0,0,0)]"
       />
       {!isFirstClick && (
         <>
           <AudioPause />
           <div className="w-full md:w-1/2 min-h-screen flex flex-col items-center justify-center mx-auto shadow-lg pb-40 bg-main">
-            <MainSection />
+            <MainSection key="firstMain" firstClick={isFirstClick} clicked={onClick} />
             <Details />
           </div>
-          <BottomBar />
+          <BottomBar ref={bottomBarRef} />
         </>
       )}
     </>

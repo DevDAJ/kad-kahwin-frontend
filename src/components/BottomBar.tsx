@@ -4,7 +4,7 @@ import { ListBulletIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid
 import { useMutation } from '@tanstack/react-query';
 import { Formik } from 'formik';
 import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import InputField from './InputField';
 import Modal from './Modal';
 import PhoneInfo from './PhoneInfo';
@@ -45,7 +45,7 @@ const options = [
 
 const isBigScreen = window.innerWidth >= 768;
 
-const BottomBar = () => {
+const BottomBar = forwardRef((props, ref) => {
   const [modal, setModal] = useState<null | string>(null);
   const [rsvps, setRsvps] = useState<any[]>([]);
 
@@ -60,7 +60,12 @@ const BottomBar = () => {
     fetchData();
   }, [fetchAll]);
 
+
   const openModal = (type: string) => setModal(type);
+
+  useImperativeHandle(ref, () => {
+    return {open: () => openModal('rsvp')};
+  }, []);
   const closeModal = () => setModal(null);
 
   const actions = (onSubmit: () => void) => {
@@ -240,6 +245,6 @@ const BottomBar = () => {
       )}
     </>
   );
-};
+});
 
 export default BottomBar;

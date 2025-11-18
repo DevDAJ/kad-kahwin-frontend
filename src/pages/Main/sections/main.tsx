@@ -15,13 +15,19 @@ const DateTextStyles: Parameters<typeof Text>[0] = {
   weight: 'normal',
   color: 'text-gray-700',
 };
+const TextStyles: Parameters<typeof Text>[0] = {
+  font: 'main',
+  size: 'xl',
+  weight: 'light',
+  color: 'text-slate-500',
+};
 
 export default function Main({
   firstClick = false,
   clicked,
 }: {
-  firstClick?: boolean;
-  clicked?: () => void;
+  firstClick: boolean;
+  clicked: () => void;
 }) {
   const { day, dayNum, month, time, year } = useDate(config.marriageDate, 'ms-MY');
   const venueSplits = config.eventDetails.venue.split(', ');
@@ -36,14 +42,12 @@ export default function Main({
         <Text text="&" color="text-slate-500" size="4xl" font="main" />
         <Text text={config.coupleNames.bride.short} {...SpouseTextStyles} />
       </div>
-      {firstClick && (
-        <button
-          onClick={clicked}
-          className="btn btn-primary fixed bottom-5 bg-slate-600 text-white px-4 py-2 rounded-lg cursor-pointer"
-        >
-          Buka
-        </button>
-      )}
+      <button
+        onClick={clicked}
+        className="btn btn-primary fixed bottom-5 bg-slate-600 text-white px-4 py-2 rounded-lg cursor-pointer"
+      >
+        {firstClick ? 'Buka' : 'RSVP'}
+      </button>
       <div className="flex flex-col items-center justify-center space-x-2 mt-4 gap-2 uppercase">
         <Text text={month} {...DateTextStyles} />
         <div className="flex w-screen uppercase">
@@ -67,15 +71,25 @@ export default function Main({
           (text, index) =>
             ![2, 4].includes(index) &&
             ([1, 3].includes(index) ? (
-              <Text {...DateTextStyles} text={`${venueSplits[index]}, ${venueSplits[index + 1]}`} />
+              <Text
+                {...DateTextStyles}
+                text={`${venueSplits[index]}, ${venueSplits[index + 1]}`}
+                key={`${venueSplits[index]}, ${venueSplits[index + 1]}`}
+              />
             ) : (
-              <Text {...DateTextStyles} text={text} />
+              <Text
+                {...DateTextStyles}
+                text={text}
+                key={`${venueSplits[index]}, ${venueSplits[index + 1]}`}
+              />
             )),
         )}
       </div>
       <br />
+
+      <Text text="Sila RSVP kehadiran anda sebelum 10 Disember 2025" {...TextStyles} />
       <br />
-      {!firstClick && <Divider isNoPad/>}
+      {!firstClick && <Divider isNoPad />}
     </div>
   );
 }
