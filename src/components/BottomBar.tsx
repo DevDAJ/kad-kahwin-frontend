@@ -8,6 +8,7 @@ import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import InputField from './InputField';
 import Modal from './Modal';
 import PhoneInfo from './PhoneInfo';
+import config from '@/config';
 
 const initialValues = {
   name: '',
@@ -212,7 +213,7 @@ const BottomBar = forwardRef((props, ref) => {
               {modal === 'address' && (
                 <div className="flex gap-4 justify-center">
                   <a
-                    href="https://maps.app.goo.gl/cgjjbocAgUNqjYKH8"
+                    href={config.eventDetails.venueGoogleMaps}
                     className="flex flex-col items-center justify-center w-30 h-30 shadow-lg p-4 rounded-2xl bg-slate-100"
                   >
                     <div className="w-10">
@@ -225,7 +226,7 @@ const BottomBar = forwardRef((props, ref) => {
                     Google Maps
                   </a>
                   <a
-                    href="https://waze.com/ul/hw283h67sc"
+                    href={config.eventDetails.venueWaze}
                     className="flex flex-col items-center justify-center shadow-lg p-4 w-30 h-30 rounded-2xl bg-slate-100"
                   >
                     <div className="w-12">

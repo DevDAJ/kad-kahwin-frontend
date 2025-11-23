@@ -16,7 +16,9 @@ const config = {
   },
   eventDetails: {
     time: '11.00 Pagi - 5.00 Petang',
-    venue: 'Senja Hills, No 26, Jalan Desa Ros, Taman Desa Ros, Kajang, Selangor',
+    venue: 'Wilqadry Grandeur Hall, C-1-01, Centre Courtyard Conezion 62502, Ioi Resort, Putrajaya, Malaysia',
+    venueWaze: "https://ul.waze.com/ul?ll=2.96521300%2C101.72103260",
+    venueGoogleMaps: "https://maps.app.goo.gl/hFrzcrj3xJ3JFgG78",
   },
   eventTentative: [
     { time: '11.00 a.m. - 4.00 p.m.', tentative: 'Jamuan Makan' },
@@ -29,6 +31,7 @@ const config = {
   doaPengantin: `Ya Allah, berkatilah majlis perkahwinan ini, 
   limpahkan baraqah dan rahmat kepada kedua mempelai ini, Kurniakanlah mereka zuriat yang soleh dan solehah. 
   Kekalkan jodoh mereka di dunia dan di akhirat dan sempurnakanlah agama mereka dengan berkat ikatan ini.`,
+
 } as const;
 
 export default config;
