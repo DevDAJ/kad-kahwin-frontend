@@ -26,6 +26,8 @@ const Reserves = () => {
     fileSaver.saveAs(new Blob([csv], { type: 'text/csv;charset=utf-8;' }), 'rsvps.csv');
   };
 
+  const totalAdults = data.reduce((acc, curr) => acc + (curr.adult ?? 0), 0);
+  const totalChildren = data.reduce((acc, curr) => acc + (curr.child ?? 0), 0);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -57,10 +59,14 @@ const Reserves = () => {
             </tr>
           )) ?? 'Loading...'}
           <tr className="border-b border-gray-200">
-            <td>Total</td>
+            <td rowSpan={2}>Total</td>
             <td></td>
-            <td>{data?.reduce((acc, curr) => acc + (curr.adult ?? 0), 0) ?? 0}</td>
-            <td>{data?.reduce((acc, curr) => acc + (curr.child ?? 0), 0) ?? 0}</td>
+            <td>{totalAdults}</td>
+            <td>{totalChildren}</td>
+          </tr>
+          <tr className="border-b border-gray-200 bg-gray-100">
+            <td></td>
+            <td colSpan={2}>{totalAdults + totalChildren}</td>
           </tr>
         </tbody>
       </table>
