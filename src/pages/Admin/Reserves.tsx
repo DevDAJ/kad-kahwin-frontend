@@ -52,15 +52,15 @@ const Reserves = () => {
             <tr key={rsvp.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
               <td>{rsvp.name}</td>
               <td>{rsvp.phone}</td>
-              <td>{rsvp.adult}</td>
-              <td>{rsvp.child}</td>
+              <td>{rsvp.adult ?? 0}</td>
+              <td>{rsvp.child ?? 0}</td>
             </tr>
           )) ?? 'Loading...'}
           <tr className="border-b border-gray-200">
             <td>Total</td>
             <td></td>
-            <td>{data?.reduce((acc, curr) => acc + curr.adult, 0) ?? 0}</td>
-            <td>{data?.reduce((acc, curr) => acc + curr.child, 0) ?? 0}</td>
+            <td>{data?.reduce((acc, curr) => acc + (curr.adult ?? 0), 0) ?? 0}</td>
+            <td>{data?.reduce((acc, curr) => acc + (curr.child ?? 0), 0) ?? 0}</td>
           </tr>
         </tbody>
       </table>
