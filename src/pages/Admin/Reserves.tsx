@@ -27,7 +27,7 @@ const Reserves = () => {
   };
 
   const totalAdults = data.reduce((acc, curr) => acc + (curr.adult ?? 0), 0);
-  const totalChildren = data.reduce((acc, curr) => acc + (curr.child ?? 0), 0);
+  const totalChildren = data.reduce((acc, curr) => Number(acc ?? 0) + Number(curr.child ?? 0), 0);
   if (loading) {
     return <div>Loading...</div>;
   }

@@ -13,6 +13,8 @@ import config from '@/config';
 const initialValues = {
   name: '',
   phone: '',
+  adult: 0,
+  child: 0,
 };
 
 function isValidMalaysianPhoneNumber(number: string) {
@@ -61,12 +63,15 @@ const BottomBar = forwardRef((props, ref) => {
     fetchData();
   }, [fetchAll]);
 
-
   const openModal = (type: string) => setModal(type);
 
-  useImperativeHandle(ref, () => {
-    return {open: () => openModal('rsvp')};
-  }, []);
+  useImperativeHandle(
+    ref,
+    () => {
+      return { open: () => openModal('rsvp') };
+    },
+    [],
+  );
   const closeModal = () => setModal(null);
 
   const actions = (onSubmit: () => void) => {
@@ -124,8 +129,8 @@ const BottomBar = forwardRef((props, ref) => {
         <Formik<{
           name: string;
           phone: string;
-          adult?: number;
-          child?: number;
+          adult: number;
+          child: number;
         }>
           initialValues={initialValues}
           onSubmit={onSubmit}
