@@ -32,7 +32,7 @@ const Reserves = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="p-4">
+    <div className="p-4 bg-slate-900 text-slate-100">
       <h1 className="text-2xl font-bold mb-4">Reserves</h1>
       <p>Manage your reserves here.</p>
       {/* button to download as csv */}
@@ -40,32 +40,34 @@ const Reserves = () => {
         Download as CSV
       </button>
       {/* Display the data in a table format of Name, Phone, Adult, Child */}
-      <table className="table-auto w-full">
+      <table className="table-auto w-full border border-gray-700 mt-4">
         <thead className="text-left">
-          <tr className="border-b border-gray-200">
+          <tr className="border border-gray-700">
             <th>Name</th>
             <th>Phone</th>
             <th>Adult</th>
             <th>Child</th>
           </tr>
         </thead>
-        <tbody className="text-sm divide-y divide-gray-200">
-          {data?.map((rsvp, index) => (
-            <tr key={rsvp.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
-              <td>{rsvp.name}</td>
-              <td>{rsvp.phone}</td>
-              <td>{rsvp.adult ?? 0}</td>
-              <td>{rsvp.child ?? 0}</td>
-            </tr>
-          )) ?? 'Loading...'}
-          <tr className="border-b border-gray-200">
-            <td rowSpan={2}>Total</td>
-            <td></td>
+        <tbody className="text-sm divide-y divide-gray-700">
+          {data
+            ?.sort((a, b) => a.name.localeCompare(b.name))
+            .map((rsvp, index) => (
+              <tr key={rsvp.id} className={index % 2 === 0 ? 'bg-slate-700' : 'bg-slate-800'}>
+                <td>{rsvp.name}</td>
+                <td>{rsvp.phone}</td>
+                <td>{rsvp.adult ?? 0}</td>
+                <td>{rsvp.child ?? 0}</td>
+              </tr>
+            )) ?? 'Loading...'}
+          <tr className="border-b border-gray-700">
+            <td rowSpan={2} colSpan={2}>
+              Total
+            </td>
             <td>{totalAdults}</td>
             <td>{totalChildren}</td>
           </tr>
-          <tr className="border-b border-gray-200 bg-gray-100">
-            <td></td>
+          <tr className="border-b border-gray-700 bg-slate-600">
             <td colSpan={2}>{totalAdults + totalChildren}</td>
           </tr>
         </tbody>

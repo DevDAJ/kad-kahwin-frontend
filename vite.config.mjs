@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: './build',
   },
   base: '/',
-  plugins: [react(), viteTsconfigPaths(), tailwindcss()],
+  plugins: [react(), tailwindcss(), viteTsconfigPaths()],
   server: {
     // this sets a default port to 3000
     port: 3000,
